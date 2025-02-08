@@ -1,0 +1,126 @@
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray-500: hsl(0, 0%, 42%);
+    --gray-950: hsl(0, 0%, 7%);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+
+    background-color: var(--yellow);
+    font-family: 'Figtree', sans-serif;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--gray-950);
+    box-sizing: border-box; 
+    padding: 24px; 
+    width: 384px;
+    height: 522px;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* gap between all the elements */
+    margin-right: 8px; /*compensating for the shadow shift to the right*/
+    box-shadow: 
+        /* main shadow */
+        0px 20px 25px -5px rgba(0, 0, 0, 0.1),
+        /* black shadow on a right and under card for effect */
+        8px 8px 0px 0px #000000;
+    /* mobile */
+    @media (max-width: 375px) {
+        width: 327px;
+        height: 501px;
+    }
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* gap between all the elements */
+}
+
+.topic {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0px;
+    color: var(--gray-950);
+    background: var(--yellow);
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    max-width: max-content;
+    margin: 0px;
+}
+
+.date-published {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0px;
+    color: var(--gray-950);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0px;
+    margin: 0px;
+    transition: color 0.3s ease;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0px;
+    color: var(--gray-500);
+    margin: 0px;
+}
+
+.author {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0px;
+    color: var(--gray-950);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author img {
+    width: 32px;
+    height: 32px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 16px;
+    width: 100%;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.card h1:hover { color: var(--yellow); }
